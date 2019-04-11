@@ -521,6 +521,7 @@ int console_execute(const char *str){
   
    if (u == 0) 
       return;
+   
   
    command_length = strlen(u);    
     
@@ -872,6 +873,14 @@ int console_execute(const char *str){
          }
       }
    }else
+   if (strcmp(u,"add") == 0){
+      int a, b;
+      u = strtok(0, " ");
+      a = atoi(u);
+      u = strtok(0, " ");
+      b = atoi(u);
+      printf("%d + %d = %d\n", a, b, a+b);
+   } else
    if (u[0] == '$'){                      //-- Sends message to a device.
       int i, devid;
       char devicename[255],*cmd;
